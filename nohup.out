@@ -84,3 +84,97 @@ Quit the server with CONTROL-C.
 Error: That port is already in use.
 [09/Mar/2023 13:52:16] "GET /todos/ HTTP/1.1" 200 4636
 [09/Mar/2023 13:52:16] "GET /static/css/style.css HTTP/1.1" 304 0
+Error: Unable to access jarfile agent.jar
+Mar 15, 2023 4:20:25 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jawad/remoting as a remoting work directory
+Mar 15, 2023 4:20:26 PM org.jenkinsci.remoting.engine.WorkDirManager setupLogging
+INFO: Both error and output logs will be printed to /home/jawad/remoting
+Mar 15, 2023 4:20:26 PM hudson.remoting.jnlp.Main createEngine
+INFO: Setting up agent: todo-app
+Mar 15, 2023 4:20:26 PM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 3107.v665000b_51092
+Mar 15, 2023 4:20:26 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jawad/remoting as a remoting work directory
+Mar 15, 2023 4:20:26 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+Mar 15, 2023 4:20:26 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Mar 15, 2023 4:20:26 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      0c:41:19:cc:fb:f3:ca:02:e9:e1:26:0d:01:29:03:16
+Mar 15, 2023 4:20:26 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+Mar 15, 2023 4:20:26 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to localhost:50000
+Mar 15, 2023 4:20:26 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Mar 15, 2023 4:20:26 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Mar 15, 2023 4:20:27 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Remote identity confirmed: 0c:41:19:cc:fb:f3:ca:02:e9:e1:26:0d:01:29:03:16
+Mar 15, 2023 4:20:27 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
+Mar 15, 2023 4:31:18 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jawad/remoting as a remoting work directory
+Mar 15, 2023 4:31:18 PM org.jenkinsci.remoting.engine.WorkDirManager setupLogging
+INFO: Both error and output logs will be printed to /home/jawad/remoting
+Mar 15, 2023 4:31:18 PM hudson.remoting.jnlp.Main createEngine
+INFO: Setting up agent: todo-app
+Mar 15, 2023 4:31:18 PM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 3107.v665000b_51092
+Mar 15, 2023 4:31:18 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jawad/remoting as a remoting work directory
+Mar 15, 2023 4:31:18 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+Mar 15, 2023 4:31:18 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Mar 15, 2023 4:31:18 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      0c:41:19:cc:fb:f3:ca:02:e9:e1:26:0d:01:29:03:16
+Mar 15, 2023 4:31:18 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+Mar 15, 2023 4:31:19 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to localhost:50000
+Mar 15, 2023 4:31:19 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Mar 15, 2023 4:31:19 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Mar 15, 2023 4:31:19 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Remote identity confirmed: 0c:41:19:cc:fb:f3:ca:02:e9:e1:26:0d:01:29:03:16
+Mar 15, 2023 4:31:19 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
+Mar 15, 2023 4:42:50 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jawad/remoting as a remoting work directory
+Mar 15, 2023 4:42:51 PM org.jenkinsci.remoting.engine.WorkDirManager setupLogging
+INFO: Both error and output logs will be printed to /home/jawad/remoting
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main createEngine
+INFO: Setting up agent: todo-app
+Mar 15, 2023 4:42:51 PM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 3107.v665000b_51092
+Mar 15, 2023 4:42:51 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jawad/remoting as a remoting work directory
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://localhost:8080/]
+Mar 15, 2023 4:42:51 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: localhost
+  Agent port:    50000
+  Identity:      0c:41:19:cc:fb:f3:ca:02:e9:e1:26:0d:01:29:03:16
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to localhost:50000
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+Mar 15, 2023 4:42:51 PM org.jenkinsci.remoting.protocol.impl.BIONetworkLayer$Reader run
+INFO: Waiting for ProtocolStack to start.
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Remote identity confirmed: 0c:41:19:cc:fb:f3:ca:02:e9:e1:26:0d:01:29:03:16
+Mar 15, 2023 4:42:51 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
