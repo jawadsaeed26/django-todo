@@ -8,6 +8,6 @@ copy . /Projects/django-today
 
 RUN python manage.py makemigrations
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8004"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8004"] 
 
 
