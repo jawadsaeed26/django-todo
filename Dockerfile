@@ -4,7 +4,7 @@ WORKDIR /Projects/django-today
 
 RUN pip install django==3.2
 
-copy . /Projects/django-today
+COPY . /Projects/django-today
 
 RUN python manage.py makemigrations
 
