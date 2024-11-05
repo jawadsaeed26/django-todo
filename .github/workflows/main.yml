@@ -1,0 +1,62 @@
+name: Deploy Docker Container
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "-----BEGIN RSA PRIVATE KEY-----
+          MIIEpgIBAAKCAQEApUhgypOMg1bLSPyklGgFKFxieMNYeVPzz5YTdJJGYcVKjRqg
+          3n/tLjEvzcydQMvt1ricT+79v9xYJntZ+0ASsL+kGkA4TaMfBiFD4HsBengu8vO9
+          gwDABYyxhQw2aOrKRuX5EoGOrK5ovKmqErjxjGjMa4zrUnv6alrJo5OoI5ysuvlC
+          nEWXg8wwVhb/cz7YWBQqYqN8FB/OVZNg9ozeq3kAYKsxvs1RKpG6++7PiIQLmm3z
+          WysJ9icbUv7mA1WTDN/t/YD7nleZeBjfd/f99BpRx9yBk9vdhhN0B3NEufGoTI3c
+          tKTLH/n54l/bA8p1Og9YCbPGvMNH9FPjdYpTEwIDAQABAoIBAQCKzAQUOeHmrW1a
+          5mZjBhNGuIYs+YaDpJ969IF0BB48nowjgHgVQQJxJvcI8Mohjt800KTbb0wB4UzZ
+          S/7dQgowCU8KiGF/uPslj6vLiCBOszxh45OCvo+CWYr9uqq6YmjpLtiB1PB2TKRB
+          wozC2jJmAd+gdZ9sDhbVV1Y7GpU5CVAK92/RdXC3BZfSr5BbfXLxdLhnHVmsINHR
+          p1+22RH25wt1zmEMCUPreb52sjLYMAIK/mS5eDUYjcOz3aPrkfz+GQJNU/xcVhsI
+          QzTO0yYjb2TJ1HtF8sPgff13AJ5ruSJem1Y0wwDUIQfsSlP0kgF5oTrFT7Z3f1dm
+          KI3RVWIxAoGBANhwDb8vQftDQ2FfVcWPbUcYQ59AcBky4BW/URwVNpxx86+fYuKv
+          uBunboxePsXyWBuCLtKMg6e9PGVtW4CACwGo5UHQSXST+M5ikyFQWBJlWM+39MaP
+          EBdrfiTjJENX0tuV4yInQAM3Ac8aF8IGprmdNR4ljBdgVi2YHEM8BYrpAoGBAMN+
+          lmnjnUeB4hK2gou6yuPtT57tRrD6TzJ1/80EYzzL4gKzvN+jNz2AD0TZNy6dt5nE
+          FCrcJf4X6hv6UB7FQ+BXbK+K9X67NRqkoJnIrT4Rw+vS/c512kOsFK8Hlt7UaD0L
+          vurfXhpmkBehWfHRfBD2MTHpR2CV4Pl1DWTtQnibAoGBAIpqXuA9oLzHr3e+OGQ3
+          7XLiGZzm4Mm8t4Iw7/Y9usciOO2/yMWgCuXkldY/D3YYHjC5eKg+JJRJeS6EWVg8
+          is1s7fDA+7kKSLv0XpOXhjt9hOaShn/VTj0sCWgduzs2FytHGBLndxCXRRjlXvw+
+          tLFP0ICPEqCAg5x1At4crI7BAoGBAMIDDyNnUN92dvY7SrOBXXl2Ol5u/IkG4TIj
+          CQpeIF5luJcV6YvIXzoZrQ2WxLzuqRdhEOK4OLxC34OEl57yBrrOCH7uWVS8Vadr
+          WjdEgSnoV5fifSA4tbQTQzOxRHlAM3LiBUbzBmENCFNrPehPDeGHcqsl6EBifjMT
+          h4dyL1WhAoGBAJWP1bPciFC1kG2mAxnXFfdeqwurJCaJdi93oFjtiDu6SvQ1bANL
+          5dpAYKV0R6ELZGOK3GQG6AQtIQMh7YUF7PejRe30eWNGQNAs8NbVXmuiJYToJn3K
+          SNuoywhW11r4UE7kOPO1zuG0LUEkIuyDZbxRU7aMMRR84gQonleJe89n
+          -----END RSA PRIVATE KEY-----" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 98.81.140.206 >> ~/.ssh/known_hosts
+
+      - name: Remove old container
+        run: |
+          ssh -i ~/.ssh/id_rsa ubuntu@98.81.140.206 "docker rm -f todo-c || true"
+
+      - name: Build Docker image
+        run: |
+          ssh -i ~/.ssh/id_rsa ubuntu@98.81.140.206 "
+          cd /home/ubuntu/django-todo &&
+          docker build -t todo:latest ."
+
+      - name: Run new container
+        run: |
+          ssh -i ~/.ssh/id_rsa ubuntu@98.81.140.206 "
+          docker run -d --name todo-c -p 8000:8004 todo:latest"
